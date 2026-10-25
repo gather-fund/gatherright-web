@@ -146,18 +146,23 @@ p { text-wrap: pretty; }
 
 /* Header. */
 .site-header { position: sticky; inset-block-start: 0; z-index: 20; background: var(--color-surface); border-block-end: 1px solid var(--color-border-subtle); }
-.header-in { display: flex; align-items: center; gap: var(--space-4); min-height: calc(var(--header-height) - 1px); padding-block: var(--space-2); }
+.header-in { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); min-height: calc(var(--header-height) - 1px); padding-block: var(--space-2); }
 .brand { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; border-radius: var(--radius-control); text-decoration: none; }
-.brand .llc { padding-inline-start: var(--space-2); border-inline-start: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: 0.75rem; line-height: 1.5; font-weight: 500; letter-spacing: 0.06em; }
+.brand .brand-suffix { padding-inline-start: var(--space-2); border-inline-start: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: 12px; line-height: 1.5; font-weight: 500; letter-spacing: 0.06em; }
 /* The GatherRight lockup: mark and wordmark, then "Technologies Limited". The wordmark is a logo, set in Nunito. */
 .brand .gr-mark { display: inline-flex; align-items: center; gap: 6px; }
 .brand .gr-mark img { width: 32px; height: auto; }
-.brand .gr-word { font-family: Nunito, var(--font-sans); font-weight: 800; font-size: 1.5rem; line-height: 1; letter-spacing: -0.01em; color: var(--color-logo-wordmark); }
-@media (min-width: 860px) { .brand .gr-mark img { width: 36px; } .brand .gr-word { font-size: 1.75rem; } }
-.site-header .brand .llc { white-space: nowrap; }
-/* The full lockup is wider than the LLC logo: on narrow phones the header shows the mark and wordmark only, so the
+/* The lockup is a logo, like the LLC site's logo image: its text is sized in px so text-only zoom does not push the
+   header off screen. Logotypes are exempt from text resizing (WCAG 1.4.4); the link's accessible name carries the full name. */
+.brand .gr-word { font-family: Nunito, var(--font-sans); font-weight: 800; font-size: 24px; line-height: 1; letter-spacing: -0.01em; color: var(--color-logo-wordmark); }
+@media (min-width: 860px) { .brand .gr-mark img { width: 36px; } .brand .gr-word { font-size: 28px; } }
+.site-header .brand .brand-suffix { white-space: nowrap; }
+/* The full lockup is wide: on narrow phones the header shows the mark and wordmark only, so the
    menu button keeps its place. The link's name still says "GatherRight Technologies Limited"; the footer keeps the full lockup. */
-@media (max-width: 439px) { .site-header .brand .llc { display: none; } }
+@media (max-width: 439px) { .site-header .brand .brand-suffix { display: none; } }
+/* The footer keeps the full lockup, so it wraps instead of overflowing at 320px or with larger text spacing (WCAG 1.4.12).
+   The header row wraps the same way when text alone is zoomed (WCAG 1.4.4), since the wordmark is sized in rem. */
+.site-footer .brand { flex-wrap: wrap; row-gap: var(--space-1); }
 .site-nav { display: none; margin-inline-start: auto; align-items: center; gap: var(--space-2); }
 .nav-link { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-3); border-radius: var(--radius-control); font-weight: 500; text-decoration: none; }
 /* The current page: aria-current for assistive technology, colour and an underline for everyone else. */

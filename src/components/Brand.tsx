@@ -10,7 +10,7 @@ export function Brand({ lazy = false }: { lazy?: boolean }) {
         <img src="/assets/gatherfund-icon.svg" alt="" width={36} height={34} loading={lazy ? 'lazy' : undefined} decoding="async" />
         <span className="gr-word">GatherRight</span>
       </span>
-      <span className="llc" aria-hidden="true">Technologies Limited</span>
+      <span className="brand-suffix" aria-hidden="true">Technologies Limited</span>
     </Link>
   );
 }
