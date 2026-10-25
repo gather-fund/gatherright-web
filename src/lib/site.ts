@@ -1,6 +1,6 @@
 // The public origin, fixed at build time. Share previews (Open Graph, X), canonical links, the sitemap and JSON-LD
 // all need it as an absolute address that crawlers can reach.
-//  1. SITE_URL, when set (npm run build:prod, or the hosting platform's environment variables).
+//  1. SITE_URL, when set (for example in the hosting platform's environment variables).
 //  2. On Vercel, its own system variables: the production domain for production builds, the deployment's address
 //     for previews. Without this a Vercel build would point crawlers at the local dev server.
 //  3. Otherwise the local dev server.
