@@ -34,4 +34,4 @@ On Vercel, a build without `SITE_URL` uses Vercel's own variables: the productio
 
 ## Fonts
 
-Inter (`public/fonts/inter-*.woff2`, from the Gatherfund web app) for all text, and Nunito 800 (`public/fonts/nunito-latin-800.woff2`, the file `nunito-latin-800-normal.woff2` from the npm package `@fontsource/nunito` 5.3.0) for the "GatherRight" wordmark only. Both are under the SIL Open Font License (`public/fonts/OFL.txt`, `public/fonts/OFL-Nunito.txt`).
+Inter (`public/fonts/inter-*.woff2`, from the Gatherfund web app) for all text, including the "gatherRight" wordmark at weight 800 (the files are variable fonts). It is under the SIL Open Font License (`public/fonts/OFL.txt`).

@@ -19,7 +19,7 @@ const STRUCTURED_DATA = {
       '@id': `${site.url}/#organization`,
       name: site.name,
       url: `${site.url}/`,
-      logo: `${site.url}/assets/gatherfund-icon.svg`,
+      logo: `${site.url}/assets/gatherright-mark.svg`,
       description: site.description,
       brand: { '@type': 'Brand', name: 'Gatherfund' },
     },
@@ -74,7 +74,7 @@ export default function HomePage() {
             <Image src="/assets/classroom.jpg" alt="Students gathered in a classroom" width={1100} height={732} sizes="170px" />
           </div>
           <p className="gather-card supporting">
-            <img src="/assets/gatherfund-icon.svg" alt="" width={36} height={34} />
+            <img src="/assets/gatherright-mark.svg" alt="" width={40} height={26} />
             <span>Many hands. <strong>Shared progress.</strong></span>
           </p>
         </div>

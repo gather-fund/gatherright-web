@@ -5,8 +5,7 @@
 <head>
 <meta charset="utf-8">
 <style>
-  @font-face { font-family: Inter; font-weight: 400 700; src: url(../../public/fonts/inter-latin.woff2) format("woff2"); }
-  @font-face { font-family: Nunito; font-weight: 800; src: url(../../public/fonts/nunito-latin-800.woff2) format("woff2"); }
+  @font-face { font-family: Inter; font-weight: 400 800; src: url(../../public/fonts/inter-latin.woff2) format("woff2"); }
   :root {
     --color-canvas: #FAF9FD; --color-surface: #FFFFFF; --color-surface-subtle: #F3EFFA;
     --color-text: #211B2D; --color-text-secondary: #625B70; --color-brand: #6941A5; --color-border-subtle: #DDD6E8;
@@ -18,10 +17,11 @@
   body { position: relative; background: var(--color-canvas); color: var(--color-text); font-family: Inter, sans-serif; -webkit-font-smoothing: antialiased; }
   .copy { position: absolute; inset-block: 64px; inset-inline-start: 72px; width: 600px; display: flex; flex-direction: column; }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .mark { display: flex; align-items: center; gap: 8px; }
-  .mark img { width: 48px; height: auto; display: block; }
-  .mark b { font-family: Nunito, sans-serif; font-weight: 800; font-size: 40px; line-height: 1; letter-spacing: -0.01em; color: #A080D0; }
-  .brand > span { padding-inline-start: 12px; border-inline-start: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: 18px; font-weight: 500; letter-spacing: 0.06em; }
+  .mark { display: flex; align-items: center; gap: 16px; }
+  .mark img { width: 84px; height: auto; display: block; }
+  .lock { display: grid; justify-items: center; gap: 5px; }
+  .lock b { font-weight: 800; font-size: 46px; line-height: 1.05; letter-spacing: -0.03em; color: #A066D6; }
+  .lock span { font-weight: 400; font-size: 14.5px; line-height: 1; letter-spacing: 0.235em; padding-inline-start: 0.235em; color: var(--color-text); white-space: nowrap; }
   .eyebrow { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; margin-block-start: auto; padding: 8px 16px; border-radius: var(--radius-pill); background: var(--color-surface-subtle); color: var(--color-brand); font-size: 17px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
   .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
   h1 { margin: 20px 0 0; font-size: 68px; line-height: 1.08; font-weight: 600; letter-spacing: -0.02em; }
@@ -34,13 +34,13 @@
   .mini { position: absolute; inset-block-start: 250px; inset-inline-end: 0; width: 170px; height: 204px; padding: 8px; border-radius: var(--radius-card); background: var(--color-canvas); rotate: 6deg; }
   .mini img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; outline: 1px solid rgba(0,0,0,.1); outline-offset: -1px; display: block; }
   .card { position: absolute; inset-block-end: 24px; inset-inline-start: 0; display: flex; align-items: center; gap: 14px; padding: 18px 22px; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); background: var(--color-surface); box-shadow: var(--shadow-raised); rotate: -3deg; font-size: 20px; }
-  .card img { width: 44px; height: auto; display: block; }
+  .card img { width: 48px; height: auto; display: block; }
   .card strong { font-weight: 500; }
 </style>
 </head>
 <body>
   <div class="copy">
-    <div class="brand"><div class="mark"><img src="../../public/assets/gatherfund-icon.svg" alt=""><b>GatherRight</b></div><span>Technologies Limited</span></div>
+    <div class="brand"><div class="mark"><img src="../../public/assets/gatherright-mark.svg" alt=""><div class="lock"><b>gatherRight</b><span>TECHNOLOGIES LIMITED</span></div></div></div>
     <div class="eyebrow"><i></i>Many possibilities. One shared purpose.</div>
     <h1>Good things begin when we <em>gather.</em></h1>
     <p>We bring people, ideas, and opportunity together to build businesses that move communities forward.</p>
@@ -49,7 +49,7 @@
     <div class="circle"></div>
     <img class="photo" src="../../public/assets/mother-daughter.jpg" alt="">
     <div class="mini"><img src="../../public/assets/classroom.jpg" alt=""></div>
-    <div class="card"><img src="../../public/assets/gatherfund-icon.svg" alt=""><span>Many hands. <strong>Shared progress.</strong></span></div>
+    <div class="card"><img src="../../public/assets/gatherright-mark.svg" alt=""><span>Many hands. <strong>Shared progress.</strong></span></div>
   </div>
 </body>
 </html>

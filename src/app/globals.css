@@ -2,22 +2,17 @@
    Tokens match design-system/tokens.css. Where the board predates the 2026-10-14 rules (weights 400/500/600,
    1px lines, 1.5px icon strokes, the outline focus method), the rules win. */
 
-/* Inter, self-hosted from public/fonts (SIL Open Font License, see public/fonts/OFL.txt). */
+/* Inter, self-hosted from public/fonts (SIL Open Font License, see public/fonts/OFL.txt). The files are variable fonts;
+   800 is declared only for the GatherRight wordmark, a logotype. */
 @font-face {
-  font-family: Inter; font-style: normal; font-weight: 400 700; font-display: swap;
+  font-family: Inter; font-style: normal; font-weight: 400 800; font-display: swap;
   src: url(/fonts/inter-latin-ext.woff2) format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: Inter; font-style: normal; font-weight: 400 700; font-display: swap;
+  font-family: Inter; font-style: normal; font-weight: 400 800; font-display: swap;
   src: url(/fonts/inter-latin.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Nunito 800, self-hosted, for the "GatherRight" wordmark only (SIL Open Font License, see public/fonts/OFL-Nunito.txt). */
-@font-face {
-  font-family: Nunito; font-style: normal; font-weight: 800; font-display: swap;
-  src: url(/fonts/nunito-latin-800.woff2) format("woff2");
 }
 
 :root {
@@ -43,7 +38,7 @@
   --color-danger-surface: #FFF1F0;
   --color-info: #275CB0;
   --color-info-surface: #EDF4FF;
-  --color-logo-wordmark: #A080D0;
+  --color-logo-wordmark: #A066D6;
   --shadow-raised: 0 4px 20px -2px rgba(33,27,45,.08);
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
   --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px;
@@ -148,18 +143,17 @@ p { text-wrap: pretty; }
 .site-header { position: sticky; inset-block-start: 0; z-index: 20; background: var(--color-surface); border-block-end: 1px solid var(--color-border-subtle); }
 .header-in { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); min-height: calc(var(--header-height) - 1px); padding-block: var(--space-2); }
 .brand { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 44px; border-radius: var(--radius-control); text-decoration: none; }
-.brand .brand-suffix { padding-inline-start: var(--space-2); border-inline-start: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: 12px; line-height: 1.5; font-weight: 500; letter-spacing: 0.06em; }
-/* The GatherRight lockup: mark and wordmark, then "Technologies Limited". The wordmark is a logo, set in Nunito. */
-.brand .gr-mark { display: inline-flex; align-items: center; gap: 6px; }
-.brand .gr-mark img { width: 32px; height: auto; }
-/* The lockup is a logo, like the LLC site's logo image: its text is sized in px so text-only zoom does not push the
-   header off screen. Logotypes are exempt from text resizing (WCAG 1.4.4); the link's accessible name carries the full name. */
-.brand .gr-word { font-family: Nunito, var(--font-sans); font-weight: 800; font-size: 24px; line-height: 1; letter-spacing: -0.01em; color: var(--color-logo-wordmark); }
-@media (min-width: 860px) { .brand .gr-mark img { width: 36px; } .brand .gr-word { font-size: 28px; } }
-.site-header .brand .brand-suffix { white-space: nowrap; }
-/* The full lockup is wide: on narrow phones the header shows the mark and wordmark only, so the
-   menu button keeps its place. The link's name still says "GatherRight Technologies Limited"; the footer keeps the full lockup. */
-@media (max-width: 439px) { .site-header .brand .brand-suffix { display: none; } }
+/* The GatherRight lockup (board, 2026-10-26): the GR mark, then "gatherRight" with "TECHNOLOGIES LIMITED" centred
+   beneath it. It is a logo, like the LLC site's logo image: its text is sized in px so text-only zoom does not push the
+   header off screen. Logotypes are exempt from text resizing (WCAG 1.4.4) and from the 400/500/600 weight rule, so the
+   wordmark is Inter 800; the link's accessible name carries the full name. */
+.brand .gr-mark { display: inline-flex; align-items: center; gap: 10px; }
+.brand .gr-mark img { width: 46px; height: auto; }
+.brand .gr-lock { display: grid; justify-items: center; gap: 3px; }
+.brand .gr-word { font-weight: 800; font-size: 24px; line-height: 1.05; letter-spacing: -0.03em; color: var(--color-logo-wordmark); }
+.brand .gr-tag { font-weight: 400; font-size: 8px; line-height: 1; letter-spacing: 0.235em; padding-inline-start: 0.235em; color: var(--color-text); white-space: nowrap; }
+@media (min-width: 860px) { .brand .gr-mark img { width: 52px; } .brand .gr-word { font-size: 28px; } .brand .gr-tag { font-size: 9px; } }
+
 /* The footer keeps the full lockup, so it wraps instead of overflowing at 320px or with larger text spacing (WCAG 1.4.12).
    The header row wraps the same way when text alone is zoomed (WCAG 1.4.4), since the wordmark is sized in rem. */
 .site-footer .brand { flex-wrap: wrap; row-gap: var(--space-1); }
@@ -187,7 +181,7 @@ p { text-wrap: pretty; }
 .mini-photo { position: absolute; inset-block-start: 46%; inset-inline-end: 0; width: 36%; aspect-ratio: 5 / 6; padding: var(--space-2); border-radius: var(--radius-card); background: var(--color-canvas); rotate: 6deg; }
 .mini-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--radius-card) - var(--space-2)); outline: 1px solid rgba(0,0,0,.1); outline-offset: -1px; }
 .gather-card { position: absolute; inset-block-end: 2%; inset-inline-start: 0; display: flex; align-items: center; gap: var(--space-3); max-width: 78%; padding: var(--space-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card); background: var(--color-surface); box-shadow: var(--shadow-raised); rotate: -3deg; }
-.gather-card img { flex: none; width: 36px; height: auto; }
+.gather-card img { flex: none; width: 40px; height: auto; }
 .gather-card strong { font-weight: 500; }
 
 .purpose-strip { border-block: 1px solid var(--color-border-subtle); background: var(--color-surface-subtle); }

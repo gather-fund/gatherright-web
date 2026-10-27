@@ -7,7 +7,7 @@ export function ClosingSection({ spaced = false }: { spaced?: boolean }) {
   return (
     <section className={spaced ? 'wrap section' : 'wrap'} id="contact" aria-labelledby="contact-heading" tabIndex={-1}>
       <div className="contact-section">
-        <div className="contact-art" aria-hidden="true"><img src="/assets/gatherfund-icon.svg" alt="" width={136} height={130} loading="lazy" decoding="async" /></div>
+        <div className="contact-art" aria-hidden="true"><img src="/assets/gatherright-mark.svg" alt="" width={136} height={88} loading="lazy" decoding="async" /></div>
         <p className="eyebrow on-subtle">The next chapter starts with a conversation</p>
         <h2 className="page-title" id="contact-heading">What could we build <em>together?</em></h2>
         <p className="secondary measure">A new idea. A shared ambition. A meaningful connection. We’d love to hear what you have in mind.</p>

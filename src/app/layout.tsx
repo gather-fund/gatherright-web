@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-import { preload } from 'react-dom';
 import { DialogProvider } from '@/components/Dialogs';
 import { RouteFocus } from '@/components/RouteFocus';
 import { SiteFooter } from '@/components/SiteFooter';
@@ -45,8 +44,6 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  // The wordmark is in every header; preloading its 16 KB font avoids a visible swap from Inter to Nunito.
-  preload('/fonts/nunito-latin-800.woff2', { as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' });
   return (
     // Smooth scrolling is for in-page section links; data-scroll-behavior lets Next.js jump straight to the top on a page change.
     <html lang="en" data-scroll-behavior="smooth">

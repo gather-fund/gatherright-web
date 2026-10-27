@@ -11,7 +11,7 @@ export default async function AppleIcon() {
   return new ImageResponse(
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#faf9fd' }}>
-        <img src={mark} width={128} height={122} alt="" />
+        <img src={mark} width={140} height={91} alt="" />
       </div>
     ),
     size,
